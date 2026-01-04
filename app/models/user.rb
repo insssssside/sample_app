@@ -8,6 +8,7 @@ class User < ApplicationRecord
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: true
   has_secure_password
-  validates :password, presence: true, length: { minimum: 6 }
+  validates :password, presence: true, length: { minimum: 5 }
   # 演習 : minimumの横の数字で最小文字数変更可能
+  # test/models/user_test.rb 'password should have a minimum length' に注意
 end
